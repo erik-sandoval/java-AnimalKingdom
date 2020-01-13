@@ -2,6 +2,17 @@ package animalKingdom;
 import java.util.ArrayList;
 
 class Main {
+    public static ArrayList<Animal> filteredList = new ArrayList<Animal>();
+
+    public static void filterAnimals(ArrayList<Animal> animals, CheckAnimal tester){
+        filteredList.clear();
+
+        for (Animal a : animals){
+            if (tester.test(a)) {
+                filteredList.add(a);
+            }
+        }
+    }
     public static void main(String[] args ) {
         
         ArrayList<Animal> animals = new ArrayList<Animal>();
