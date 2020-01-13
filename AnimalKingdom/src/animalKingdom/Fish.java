@@ -6,15 +6,15 @@ public class Fish extends Animal {
         super(name, year);
     }
 
-    public void breathe(){
-        System.out.println(getName() + " breathe through their gills.");
+    public String breathe(){
+        return "Gills";
     }
     
-    public void move(){
-        System.out.println(getName() + " move by swimming.");
+    public String move(){
+        return "Swimming";
     }
     
-    public void reproduce(){
-        System.out.println(getName() + " reproduce by laying eggs.");
+    public String reproduce(){
+        return "Eggs";
     }
 }

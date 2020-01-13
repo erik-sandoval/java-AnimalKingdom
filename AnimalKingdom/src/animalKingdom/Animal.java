@@ -8,14 +8,15 @@ public abstract class Animal {
     private int year;
 
     public Animal(String name, int year) {
-        id = id + 1;
+        maxId++;
+        id = maxId;
         this.name = name;
         this.year = year;
     }
 
-    public abstract void move();
-    public abstract void breathe();
-    public abstract void reproduce();
+    public abstract String move();
+    public abstract String breathe();
+    public abstract String reproduce();
 
     public void eat() {
         System.out.println(name + " NOM NOM NOM");

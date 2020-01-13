@@ -6,15 +6,15 @@ public class Mammal extends Animal {
         super(name, year);
 	}
 
-	public void move() {
-        System.out.println(getName() + " walks.");
+	public String move() {
+        return "Walks";
     }
 
-    public void breathe() {
-        System.out.println(getName() + " breathe through their lungs.");
+    public String breathe() {
+        return "Lungs";
     }
     
-    public void reproduce() {
-        System.out.println(getName() + " have live births.");
+    public String reproduce() {
+        return "Live Births";
     }
 }

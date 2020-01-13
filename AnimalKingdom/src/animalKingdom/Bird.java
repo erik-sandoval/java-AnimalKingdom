@@ -6,15 +6,15 @@ class Bird extends Animal {
         super(name, year);
     }
 
-    public void move(){
-        System.out.println(getName() + " fly.");
+    public String move(){
+        return "Fly";
     }
     
-    public void reproduce(){
-        System.out.println(getName() + " lay eggs.");
+    public String reproduce(){
+        return "Eggs";
     }
     
-    public void breathe(){
-        System.out.println(getName() + " breathe through their lungs.");
+    public String breathe(){
+        return "Lungs";
     }
 }
