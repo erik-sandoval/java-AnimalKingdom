@@ -7,14 +7,14 @@ public class Mammal extends Animal {
 	}
 
 	public void move() {
-        System.out.println(getName() + " walks");
+        System.out.println(getName() + " walks.");
     }
 
     public void breathe() {
-        System.out.println(getName() + " breathe through their lungs");
+        System.out.println(getName() + " breathe through their lungs.");
     }
     
     public void reproduce() {
-        System.out.println(getName() + " have live births");
+        System.out.println(getName() + " have live births.");
     }
 }
