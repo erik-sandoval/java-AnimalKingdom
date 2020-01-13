@@ -38,5 +38,24 @@ class Main {
         animals.add(new Fish("Catfish", 1817));
         animals.add(new Fish("Perch", 1758));
 
+        // Sorted by Year Descending
+        System.out.println("Sorted by Year Descending.");
+        animals.sort((animal1, animal2) -> Integer.compare(animal1.getYear(), animal2.getYear()));
+        animals.forEach((animal) -> System.out.println(animal.getName() + " " + animal.getYear() ));
+
+        // Sorted by Name Descrending
+        System.out.println("/n Sorted by Name Descending.");
+        animals.sort((animal1, animal2) -> animal1.getName().compareToIgnoreCase(animal2.getName()));
+        animals.forEach((animal) -> System.out.println(animal.getName()));
+        
+        // Sorted by how they move
+        System.out.println("Sorted how they move.");
+        animals.sort((animal1, animal2) -> animal1.move().compareToIgnoreCase(animal2.move()));
+        animals.forEach((animal) -> System.out.println(animal.getName()));
+        
+        // Sorted by those who breathe with lungs.
+        System.out.println("Sorted by those who breathe with lungs.");
+        filterAnimals(animals, (a) -> a.breathe() == "Lungs");
+        filteredList.forEach((animal) -> System.out.println(animal.getName() + " breathes through " + animal.breathe()));
     }
 }
