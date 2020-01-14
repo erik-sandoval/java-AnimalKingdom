@@ -7,7 +7,7 @@ public class Mammal extends Animal {
 	}
 
 	public String move() {
-        return "Walks";
+        return "Walking";
     }
 
     public String breathe() {

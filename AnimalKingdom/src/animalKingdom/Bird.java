@@ -7,7 +7,7 @@ class Bird extends Animal {
     }
 
     public String move(){
-        return "Fly";
+        return "Flying";
     }
     
     public String reproduce(){

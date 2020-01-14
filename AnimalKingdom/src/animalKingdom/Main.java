@@ -39,23 +39,38 @@ class Main {
         animals.add(new Fish("Perch", 1758));
 
         // Sorted by Year Descending
-        System.out.println("Sorted by Year Descending.");
+        System.out.println("\nSorted by Year Descending.\n");
         animals.sort((animal1, animal2) -> Integer.compare(animal1.getYear(), animal2.getYear()));
         animals.forEach((animal) -> System.out.println(animal.getName() + " " + animal.getYear() ));
 
         // Sorted by Name Descrending
-        System.out.println("/n Sorted by Name Descending.");
+        System.out.println("\nSorted by Name Descending.\n");
         animals.sort((animal1, animal2) -> animal1.getName().compareToIgnoreCase(animal2.getName()));
         animals.forEach((animal) -> System.out.println(animal.getName()));
         
         // Sorted by how they move
-        System.out.println("Sorted how they move.");
+        System.out.println("\nSorted how they move.\n");
         animals.sort((animal1, animal2) -> animal1.move().compareToIgnoreCase(animal2.move()));
-        animals.forEach((animal) -> System.out.println(animal.getName()));
+        animals.forEach((animal) -> System.out.println(animal.getName() + " moves by " + animal.move()));
         
         // Sorted by those who breathe with lungs.
-        System.out.println("Sorted by those who breathe with lungs.");
+        System.out.println("\nSorted by those who breathe with lungs.\n");
         filterAnimals(animals, (a) -> a.breathe() == "Lungs");
         filteredList.forEach((animal) -> System.out.println(animal.getName() + " breathes through " + animal.breathe()));
+        
+        // Sorted by those who breathe with lungs and named in 1758
+        System.out.println("\nSorted by those who breathe with lungs and named in 1758.\n");
+        filterAnimals(animals, (a) -> a.breathe() == "Lungs" && a.getYear() == 1758 );
+        filteredList.forEach((animal) -> System.out.println(animal.getName() + " breathes through " + animal.breathe() + " and were named in " + animal.getYear()));
+        
+        // Sorted by those who lay eggs and breathe with lungs
+        System.out.println("\nSorted by those who lay eggs and breathe with lungs.\n");
+        filterAnimals(animals, (a) -> a.breathe() == "Lungs" && a.reproduce() == "Eggs" );
+        filteredList.forEach((animal) -> System.out.println(animal.getName() + " breathes through " + animal.breathe() + " and lay " + animal.reproduce()));
+
+        System.out.println("\nSorted Alphabetically and by those that were named in 1758.\n");
+        filterAnimals(animals, (a) -> a.getYear() == 1758);
+        filteredList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+        filteredList.forEach((animal) -> System.out.println(animal.getName() + " named in " + animal.getYear()));
     }
 }
